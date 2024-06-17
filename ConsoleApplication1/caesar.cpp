@@ -1,7 +1,11 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std;
+#ifdef _WIN32
+#define DLL_EXPORT __declspec(dllexport)
+#else
+#define DLL_EXPORT
+#endif
 
 class CaesarCipher {
 public:
@@ -28,19 +32,12 @@ public:
     }
 };
 
-int main() {
-    char rawText[] = "Roses are red, violets are blue";
-    int key = 1;
+extern "C" {
+    DLL_EXPORT char* encrypt(char* rawText, int key) {
+        return CaesarCipher::encrypt(rawText, key);
+    }
 
-    char* encrypted = CaesarCipher::encrypt(rawText, key);
-    char* decrypted = CaesarCipher::decrypt(encrypted, key);
-
-    cout << "Original Text: " << rawText << endl;
-    std::cout << "Encrypted Text: " << encrypted << endl;
-    cout << "Decrypted Text: " << decrypted << endl;
-
-    delete[] encrypted;
-    delete[] decrypted;
-
-    return 0;
+    DLL_EXPORT char* decrypt(char* encryptedText, int key) {
+        return CaesarCipher::decrypt(encryptedText, key);
+    }
 }
