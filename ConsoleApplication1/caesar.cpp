@@ -1,11 +1,5 @@
+#include "caesar.h"
 #include <iostream>
-#include <cstring>
-
-#ifdef _WIN32
-#define DLL_EXPORT __declspec(dllexport)
-#else
-#define DLL_EXPORT
-#endif
 
 class CaesarCipher {
 public:
@@ -18,7 +12,8 @@ public:
             if (isalpha(c)) {
                 char base = isupper(c) ? 'A' : 'a';
                 encryptedText[i] = (c - base + key) % 26 + base;
-            } else {
+            }
+            else {
                 encryptedText[i] = c;
             }
         }
