@@ -1,6 +1,6 @@
+#include "caesar.h"
 #include <windows.h>
 #include <iostream>
-#include "caesar.h"
 
 using namespace std;
 
@@ -10,8 +10,7 @@ typedef char* (*decrypt_ptr)(char*, int);
 int main() {
     HINSTANCE hDll = LoadLibrary(TEXT("caesar.dll"));
     if (!hDll) {
-        DWORD error = GetLastError();
-        cerr << "Could not load the DLL! Error code: " << error << endl;
+        cerr << "Could not load the DLL!" << endl;
         return 1;
     }
 

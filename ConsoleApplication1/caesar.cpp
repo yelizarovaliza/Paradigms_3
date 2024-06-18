@@ -1,37 +1,27 @@
 #include "caesar.h"
-#include <iostream>
+#include <cstring>
+#include <cctype>
 
-class CaesarCipher {
-public:
-    static char* encrypt(char* rawText, int key) {
-        int len = strlen(rawText);
-        char* encryptedText = new char[len + 1];
+// Encrypt function
+char* encrypt(char* rawText, int key) {
+    int len = std::strlen(rawText);
+    char* encryptedText = new char[len + 1];
 
-        for (int i = 0; i < len; ++i) {
-            char c = rawText[i];
-            if (isalpha(c)) {
-                char base = isupper(c) ? 'A' : 'a';
-                encryptedText[i] = (c - base + key) % 26 + base;
-            }
-            else {
-                encryptedText[i] = c;
-            }
+    for (int i = 0; i < len; ++i) {
+        char c = rawText[i];
+        if (std::isalpha(c)) {
+            char base = std::isupper(c) ? 'A' : 'a';
+            encryptedText[i] = (c - base + key) % 26 + base;
         }
-        encryptedText[len] = '\0';
-        return encryptedText;
+        else {
+            encryptedText[i] = c;
+        }
     }
+    encryptedText[len] = '\0';
+    return encryptedText;
+}
 
-    static char* decrypt(char* encryptedText, int key) {
-        return encrypt(encryptedText, 26 - key);
-    }
-};
-
-extern "C" {
-    DLL_EXPORT char* encrypt(char* rawText, int key) {
-        return CaesarCipher::encrypt(rawText, key);
-    }
-
-    DLL_EXPORT char* decrypt(char* encryptedText, int key) {
-        return CaesarCipher::decrypt(encryptedText, key);
-    }
+// Decrypt function
+char* decrypt(char* encryptedText, int key) {
+    return encrypt(encryptedText, 26 - key);
 }
