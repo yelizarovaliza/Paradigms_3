@@ -1,0 +1,66 @@
+Microsoft Windows [Version 10.0.19045.4529]
+(c) Корпорація Майкрософт. Усі права захищені.
+
+C:\Users\User>cmd /c ""C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\vsdevcmd.bat" && cl /EHsc /c C:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\main.cpp /FoC:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\main1.obj"
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.9.6
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+main.cpp
+
+C:\Users\User>cmd /c ""C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\vsdevcmd.bat" && cl /EHsc /c C:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\caesar.cpp /FoC:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\caesar.obj"
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.9.6
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+caesar.cpp
+
+C:\Users\User>cmd /c ""C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\vsdevcmd.bat" && cl C:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\main1.obj C:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\caesar.obj /Fe:main.exe"
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.9.6
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.39.33523.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:main.exe
+C:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\main1.obj
+C:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\caesar.obj
+   Creating library main.lib and object main.exp
+
+C:\Users\User>cmd /c ""C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\vsdevcmd.bat" && cl /LD  C:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\caesar.obj /Fe:caesar.dll"
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.9.6
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.39.33523.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/dll
+/implib:caesar.lib
+/out:caesar.dll
+C:\Users\User\Documents\GitHub\Paradigms_3\ConsoleApplication1\caesar.obj
+   Creating library caesar.lib and object caesar.exp
+
+C:\Users\User>main1.exe
+'main1.exe' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\User>main.exe
+Original Text: Roses are red, violets are blue
+Encrypted Text: Sptft bsf sfe, wjpmfut bsf cmvf
+Decrypted Text: Roses are red, violets are blue
+
+C:\Users\User>
