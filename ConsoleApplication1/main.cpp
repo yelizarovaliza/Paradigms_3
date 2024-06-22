@@ -24,7 +24,7 @@ int main() {
     }
 
     char rawText[] = "Roses are red, violets are blue";
-    int key = 1;
+    int key = 1000;
 
     char* encrypted = encrypt(rawText, key);
     char* decrypted = decrypt(encrypted, key);
